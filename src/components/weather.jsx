@@ -59,7 +59,7 @@ export default function Weather({setLocation,currentData}) {
             </Box>  
             {/* <Box h={'200px'} w={'0.11%'} bg={'white'} ></Box> */}
             {/* current temp. state */}
-            <Box h={'200px'} display={'flex'} justifyContent={'space-between'} w={'30%'} className='current_stats' p={'2%'} >
+            <Box h={'200px'} display={'flex'} justifyContent={'space-between'} w={ '30%'} className='current_stats' p={'2%'} >
                 <div>
                     <Flex mb={5} flexDir={'column'} alignItems={'center'}>
                         <Flex align="center" justify="center" flexDirection="row">

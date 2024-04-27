@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const getData=async (query)=>{ 
   try {
-    let data=await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=e2d606b5403f40c685d165141242604&q=${query}&days=1&aqi=no&alerts=no`)
+    let data=await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=e2d606b5403f40c685d165141242604&q=${query}&days=1&aqi=no&alerts=no`)
     return data.data
   } catch (error) {
     return error
