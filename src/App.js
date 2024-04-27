@@ -37,7 +37,6 @@ function App() {
             sunrise:data.forecast.forecastday[0].astro.sunrise,
             sunset:data.forecast.forecastday[0].astro.sunset,
             hour:[...data.forecast.forecastday[0].hour]
-
           })
       })
       .catch(()=>{

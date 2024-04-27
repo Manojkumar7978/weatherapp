@@ -13,10 +13,10 @@
 - Showing time wise todays temp. (in c) .
 
 ## Demo
-- 
+- https://vimeo.com/939886124/e985f48e34?share=copy 
 
 ## Deployed link
-- 
+- https://weatherapp-rouge-pi.vercel.app/
 
 ## Tech Stack
 - React
