@@ -4,7 +4,8 @@
   flex-wrap: wrap;
   background: linear-gradient(to right, rgb(62, 62, 205), rgb(109, 178, 206),rgba(0, 0, 255, 0.227));
   padding: 20px;
-  
+  /* background: linear-gradient(to right, rgb(56, 57, 57), rgb(123, 123, 129),rgba(194, 194, 214, 0.227)); */
+ 
 }
 
 /* css for different screen  */

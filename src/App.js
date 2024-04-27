@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import './App.css';
 import Weather from './components/weather';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,6 @@ import axios from 'axios';
 const getData=async (query)=>{ 
   try {
     let data=await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=e2d606b5403f40c685d165141242604&q=${query}&days=1&aqi=no&alerts=no`)
-    console.log(data.data)
     return data.data
   } catch (error) {
     return error
@@ -19,6 +18,7 @@ function App() {
   let [location,setLocation]=useState('kolkata')
 
   useEffect(()=>{
+    setCurrentData(null)
       getData(location)
       .then((data)=>{
           setCurrentData({
@@ -40,15 +40,35 @@ function App() {
 
           })
       })
+      .catch(()=>{
+        setCurrentData('error')
+      })
   },[location])
+  console.log(currentData)
+
   return (
-    <Box className="main_container">
-      {
-        currentData!==null && 
+    <>      {
+        currentData!==null && currentData !=='error' ? 
+        <Box className="main_container">
+
               <Weather setLocation={setLocation} currentData={currentData}/>
+              </Box>
+
+        : 
+        <Text display={currentData==='error' && 'none'} textAlign={'center'} color={'red'}>Loading...please Wait</Text>
+      }
+      {
+        currentData==='error' && 
+        <Text textAlign={'center'}
+        onClick={()=>{
+          setLocation('Kolkata')
+        }}
+        cursor={'pointer'}
+        color={'red'}>Something went wrong...Back to home</Text>
 
       }
-    </Box>
+</>
+
   );
 }
 

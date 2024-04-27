@@ -1,6 +1,5 @@
 import { Box, Button, Divider, Flex, Heading, Image, Input, Text, chakra } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import cloudy from './assets/cloudy_1163661.png'
 import { format } from 'date-fns';
 
 export default function Weather({setLocation,currentData}) {
@@ -106,7 +105,9 @@ export default function Weather({setLocation,currentData}) {
                 <Box display={'flex'} gap={2} rowGap={2}  justifyContent={'space-between'} className='todays_weather'>
                     {
                         currentData.hour.map((el,ind)=>{
-                            return ind%3===0 &&ind!=0 &&  (<chakra.div display='flex'
+                            return ind%3===0 &&ind!=0 &&  (<chakra.div 
+                                key={ind}
+                                display='flex'
                             flexDir={ ['row','column','column']}
                             color={'white'}
                              w={['100%','13%','13%'] }
